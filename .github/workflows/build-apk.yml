@@ -28,18 +28,20 @@ jobs:
           channel: 'stable'
           cache: true
 
-      - name: Locate Project Root & Build APK
+      - name: Locate, Re-generate Android Platform & Build APK
         run: |
-          # Awtomatikong hahanapin kung nasaan ang pubspec.yaml
           PUBSPEC_PATH=$(find . -name "pubspec.yaml" -not -path "*/.*" | head -n 1)
           PROJECT_DIR=$(dirname "$PUBSPEC_PATH")
           echo "Found project at: $PROJECT_DIR"
           
           cd "$PROJECT_DIR"
+          
+          # I-generate ang android folder kung wala pa
+          flutter create . --platforms=android --org=com.topgun.injector
+          
           flutter pub get
           flutter build apk --release
           
-          # I-copy ang nabuong APK sa root para madaling ma-upload
           mkdir -p $GITHUB_WORKSPACE/output_apk
           cp build/app/outputs/flutter-apk/app-release.apk $GITHUB_WORKSPACE/output_apk/Topgun-Injector-RenanteFullo.apk
 
