@@ -11,6 +11,11 @@ jobs:
   build-android:
     runs-on: ubuntu-latest
 
+    # Dito nakaset ang working directory para sa BUONG build process
+    defaults:
+      run:
+        working-directory: topgun_enjector
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -29,11 +34,9 @@ jobs:
           cache: true
 
       - name: Get Dependencies
-        working-directory: ./topgun_enjector
         run: flutter pub get
 
       - name: Build Release APK
-        working-directory: ./topgun_enjector
         run: flutter build apk --release
 
       - name: Upload APK File
