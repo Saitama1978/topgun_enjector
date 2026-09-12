@@ -39,7 +39,8 @@ class TopgunInjectorApp extends StatelessWidget {
           foregroundColor: Colors.white,
           elevation: 0,
         ),
-        cardTheme: CardTheme(
+        // Inayos mula CardTheme patungong CardThemeData
+        cardTheme: CardThemeData(
           color: const Color(0xFF1A1A1A),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -123,13 +124,15 @@ class _TopgunHomeScreenState extends State<TopgunHomeScreen> {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            crossAxisAlignment: CrossAlignment.stretch,
+            // Inayos mula CrossAlignment patungong CrossAxisAlignment
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Card(
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: Column(
-                    crossAxisAlignment: CrossAlignment.start,
+                    // Inayos mula CrossAlignment patungong CrossAxisAlignment
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Row(
                         children: [
