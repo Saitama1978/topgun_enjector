@@ -9,7 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_v2ray: ^0.8.0
+  # In-update ang version mula ^0.8.0 patungong ^1.0.10
+  flutter_v2ray: ^1.0.10
   shared_preferences: ^2.2.2
 
 dev_dependencies:
